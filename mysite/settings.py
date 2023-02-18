@@ -14,7 +14,10 @@ INSTALLED_APPS = [
     "Main.apps.MainConfig",
 ]
 
-MIDDLEWARE = ["Main.middleware.CustomAuthenticationMiddleware"]
+MIDDLEWARE = [
+    "Main.middleware.CustomAuthenticationMiddleware",
+    "Main.middleware.CustomPostMiddleware",
+]
 
 ROOT_URLCONF = "mysite.urls"
 

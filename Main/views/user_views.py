@@ -52,7 +52,6 @@ def registerUser(request):
 
         hasUserInDB = User.objects.filter(Q(username=username) | Q(email=email))
 
-        print(hasUserInDB)
         if hasUserInDB:
             raise CustomException("Пользователь уже сущетсвует", 401)
 

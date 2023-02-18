@@ -1,4 +1,4 @@
-from django.http import HttpResponse, JsonResponse, HttpResponseBadRequest
+from django.http import JsonResponse
 
 
 class CustomException(Exception):
