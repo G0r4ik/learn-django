@@ -6,5 +6,6 @@ class CustomException(Exception):
         self.message = message
         self.status = status
 
-def errorHandler(message, code=400):
+
+def errorHandler(message="Ошибка", code=400):
     return JsonResponse({"error": message}, status=code)

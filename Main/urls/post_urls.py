@@ -1,6 +1,5 @@
 from django.urls import path
 from Main.views.post_views import *
-from Main.middleware import CustomAuthenticationMiddleware
 
 
 urlpatterns = [

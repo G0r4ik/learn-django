@@ -4,7 +4,7 @@ from django.forms import model_to_dict
 from django.http import HttpResponse, JsonResponse
 from django.contrib.auth.hashers import make_password, check_password
 from mysite.settings import SECRET_KEY
-from Main.errorHandler import errorHandler, CustomException
+from Main.helpers.errorHandler import errorHandler, CustomException
 from Main.models.user import User
 from django.db.models import Q
 

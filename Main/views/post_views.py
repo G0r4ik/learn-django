@@ -1,7 +1,7 @@
 from django.forms import model_to_dict
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from django.http import JsonResponse
-from Main import errorHandler
+from Main.helpers import errorHandler
 
 from Main.models.user import User
 
@@ -90,16 +90,14 @@ def postUpdateById(request, postID):
 
 
 def deletePostById(request, postID):
-    try:
-        if request.post:
-            post = request.post
-        else:
-            return errorHandler.errorHandler("Такого поста не существует 1", 400)
+    post = get_object_or_404(Post, id=postID)
 
+    if request.post:
         post.delete()
         return JsonResponse(model_to_dict(post), safe=False)
-    except Post.DoesNotExist:
-        return errorHandler.errorHandler("Такого поста не существует 2", 400)
+    else:
+        return None
+        # return errorHandler.errorHandler("Такого поста не существует 1", 400)
 
 
 def searchPost(request, searchText):
