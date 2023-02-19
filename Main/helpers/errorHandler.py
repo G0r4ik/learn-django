@@ -8,4 +8,4 @@ class CustomException(Exception):
 
 
 def errorHandler(message="Ошибка", code=400):
-    return JsonResponse({"error": message}, status=code)
+    return JsonResponse({"message": message}, status=code)
